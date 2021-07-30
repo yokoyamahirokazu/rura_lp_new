@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
+import axios from 'axios'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -23,6 +24,22 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://rura.microcms.io/api/v1/news', {
+          headers: { 'X-API-KEY': '905f8b65-262a-41b6-8a39-dd16be30f5c2' }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
