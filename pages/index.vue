@@ -33,7 +33,14 @@
       </div>
     </section>
 
-    <!-- <Unique /> -->
+    <Service />
+    <ContactSection />
+    <Scene />
+    <Design />
+    <ContactSection />
+    <Unique />
+    <ContactSection />
+
     <section class="white">
       <h2>
         <span class="main">お知らせ</span>
@@ -77,21 +84,20 @@
 </template>
 
 <script>
-import Slick from "vue-slick";
-import Unique from "@/components/unique.vue";
 import ContactSection from "@/components/ContactSection.vue";
 import Service from "@/components/service.vue";
 import Scene from "@/components/scene.vue";
 import Design from "@/components/design.vue";
 import Case from "@/components/case.vue";
+import Unique from "@/components/unique.vue";
 export default {
   components: {
-    Unique,
     ContactSection,
     Service,
     Scene,
     Design,
     Case,
+    Unique,
   },
 
   async asyncData({ $microcms }) {
