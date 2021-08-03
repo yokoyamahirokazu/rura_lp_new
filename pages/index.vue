@@ -100,22 +100,22 @@ export default {
     Unique,
   },
 
-  async asyncData({ $microcms }) {
-    const newsData = await $microcms.get({
-      endpoint: "news",
-      queries: { limit: 3 },
-    });
-    const caseData = await $microcms.get({
-      endpoint: "case",
-    });
-    const faqData = await $microcms.get({
-      endpoint: "faq",
-    });
-    return {
-      newsItems: newsData.contents,
-      caseItems: caseData.contents,
-      faqItems: faqData.contents,
-    };
-  },
+  // async asyncData({ $microcms }) {
+  //   const newsData = await $microcms.get({
+  //     endpoint: "news",
+  //     queries: { limit: 3 },
+  //   });
+  //   const caseData = await $microcms.get({
+  //     endpoint: "case",
+  //   });
+  //   const faqData = await $microcms.get({
+  //     endpoint: "faq",
+  //   });
+  //   return {
+  //     newsItems: newsData.contents,
+  //     caseItems: caseData.contents,
+  //     faqItems: faqData.contents,
+  //   };
+  // },
 };
 </script>
