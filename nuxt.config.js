@@ -1,7 +1,6 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
 
-import axios from "axios";
 
 
 export default {
@@ -55,9 +54,10 @@ export default {
 
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/markdownit'
+  modules: ['@nuxtjs/axios'
   ],
-
+  axios: {
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
