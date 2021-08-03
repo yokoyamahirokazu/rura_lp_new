@@ -1,10 +1,13 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
+
 import axios from 'axios'
+
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -22,9 +25,24 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com'
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com'
+      },
+      {
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap',
+        rel: 'stylesheet'
+      }
+    ],
+
   },
+
+
 
   generate: {
     async routes() {
@@ -42,9 +60,6 @@ export default {
     }
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -73,5 +88,18 @@ export default {
     preset: 'default',
   },
 
+  css: [
+    '~/assets/css/normalize',
+    '~/assets/css/style',
+  ],
+
+  buildModules: ["nuxt-microcms-module"],
+  microcms: {
+    options: {
+      serviceDomain: "rura",
+      apiKey: "905f8b65-262a-41b6-8a39-dd16be30f5c2",
+    },
+    mode: process.env.NODE_ENV === "production" ? "server" : "all",
+  },
 
 }

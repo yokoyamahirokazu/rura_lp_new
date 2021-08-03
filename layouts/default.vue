@@ -1,6 +1,9 @@
 <template>
-  <div class="main">
+  <div>
     <Header />
+    <div>
+      <img src="~/assets/img/rura_lp_eyecatch_1.png" alt="" />
+    </div>
     <main>
       <nuxt />
     </main>
@@ -8,19 +11,41 @@
   </div>
 </template>
 <script>
-import Header from "@/components/header.vue"; // headerをインポート
-import Footer from "@/components/footer.vue"; // footerをインポート
+import Header from "@/components/header.vue";
+import Footer from "@/components/footer.vue";
 export default {
   components: {
     Header,
     Footer,
   },
 };
+
+(function (d) {
+  var config = {
+      kitId: "yht6dgb",
+      scriptTimeout: 3000,
+      async: true,
+    },
+    h = d.documentElement,
+    t = setTimeout(function () {
+      h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+    }, config.scriptTimeout),
+    tk = d.createElement("script"),
+    f = false,
+    s = d.getElementsByTagName("script")[0],
+    a;
+  h.className += " wf-loading";
+  tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+  tk.async = true;
+  tk.onload = tk.onreadystatechange = function () {
+    a = this.readyState;
+    if (f || (a && a != "complete" && a != "loaded")) return;
+    f = true;
+    clearTimeout(t);
+    try {
+      Typekit.load(config);
+    } catch (e) {}
+  };
+  s.parentNode.insertBefore(tk, s);
+})(document);
 </script>
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-</style>

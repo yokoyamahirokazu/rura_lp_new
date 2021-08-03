@@ -13,7 +13,12 @@
     "@nuxtjs/markdownit": "^2.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "jquery": "^3.6.0",
+    "microcms-js-sdk": "^1.2.0",
+    "nuxt": "^2.15.7",
+    "nuxt-microcms-module": "^1.0.1",
+    "slick-carousel": "^1.8.1",
+    "vue-slick": "^1.1.16"
   },
   "devDependencies": {}
 }
