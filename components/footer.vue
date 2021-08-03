@@ -6,7 +6,3 @@
 <script>
 export default {};
 </script>
-<style>
-footer {
-}
-</style>
