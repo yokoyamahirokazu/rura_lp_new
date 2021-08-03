@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   layout: "default02",
   async asyncData({ $microcms }) {
