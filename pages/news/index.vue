@@ -1,29 +1,22 @@
 <template>
-  <div class="main-content">
-    <div>
-      <div>
-        <div v-for="(item, index) in newsItems" :key="index">
-          <nuxt-link :to="'news/' + item.id">
-            <div>
-              <h3>{{ item.title }}</h3>
-              <p>{{ new Date(item.publishedAt).toLocaleDateString() }}</p>
-            </div>
-          </nuxt-link>
-        </div>
-      </div>
+  <div>
+    <div v-for="item in newsArchives" v-bind:key="item.id">
+      <nuxt-link :to="`/news/${item.id}`">
+        <h3>{{ item.title }}</h3>
+        <p>{{ new Date(item.publishedAt).toLocaleDateString() }}</p>
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  layout: "default02",
   async asyncData({ $microcms }) {
-    const newsData = await $microcms.get({
+    const newsArchive = await $microcms.get({
       endpoint: "news",
     });
     return {
-      newsItems: newsData.contents,
+      newsArchives: newsArchive.contents,
     };
   },
 };

@@ -42,14 +42,16 @@
     <ContactSection />
 
     <section class="white">
-      <h2>
-        <span class="main">お知らせ</span>
-      </h2>
+      <div class="contents">
+        <h2>
+          <span class="main">お知らせ</span>
+        </h2>
 
-      <div v-for="item in newsItems" v-bind:key="item.id">
-        <div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ new Date(item.publishedAt).toLocaleDateString() }}</p>
+        <div v-for="item in newsItems" v-bind:key="item.id">
+          <div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ new Date(item.publishedAt).toLocaleDateString() }}</p>
+          </div>
         </div>
       </div>
     </section>
@@ -90,9 +92,6 @@ import Scene from "@/components/scene.vue";
 import Design from "@/components/design.vue";
 import Case from "@/components/case.vue";
 import Unique from "@/components/unique.vue";
-
-import axios from "axios";
-
 export default {
   components: {
     ContactSection,
