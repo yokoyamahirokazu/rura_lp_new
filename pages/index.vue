@@ -90,6 +90,9 @@ import Scene from "@/components/scene.vue";
 import Design from "@/components/design.vue";
 import Case from "@/components/case.vue";
 import Unique from "@/components/unique.vue";
+
+import axios from "axios";
+
 export default {
   components: {
     ContactSection,
