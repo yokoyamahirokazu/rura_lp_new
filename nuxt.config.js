@@ -42,25 +42,6 @@ export default {
 
   },
 
-
-
-  generate: {
-    async routes() {
-      const pages = await axios
-        .get('https://rura.microcms.io/api/v1/news', {
-          headers: { 'X-API-KEY': '905f8b65-262a-41b6-8a39-dd16be30f5c2' }
-        })
-        .then((res) =>
-          res.data.contents.map((content) => ({
-            route: `news/${content.id}`,
-            payload: content
-          }))
-        )
-      return pages
-    }
-  },
-
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
