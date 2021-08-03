@@ -1,6 +1,7 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
 
+import axios from "axios";
 
 
 export default {
@@ -38,7 +39,11 @@ export default {
         rel: 'stylesheet'
       }
     ],
-
+    script: [
+      {
+        src: "https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"
+      }
+    ]
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -48,9 +53,6 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/markdownit'
