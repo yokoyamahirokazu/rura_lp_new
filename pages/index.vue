@@ -86,6 +86,14 @@
 </template>
 
 <script>
+const { createClient } = microcms;
+
+// Initialize Client SDK.
+const client = createClient({
+  serviceDomain: "rura", // YOUR_DOMAIN is the XXXX part of XXXX.microcms.io
+  apiKey: "905f8b65-262a-41b6-8a39-dd16be30f5c2",
+});
+
 import ContactSection from "@/components/ContactSection.vue";
 import Service from "@/components/service.vue";
 import Scene from "@/components/scene.vue";
