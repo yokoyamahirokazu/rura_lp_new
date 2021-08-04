@@ -1,6 +1,6 @@
 <template>
   <section class="light">
-    <div class="contents">
+    <div class="contents contents_no_pb">
       <div class="headline">
         <h2>
           <span class="main">遠隔接客サービス</span

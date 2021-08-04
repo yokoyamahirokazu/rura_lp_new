@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { API_KEY } = process.env;
+const nodeExternals = require("webpack-node-externals")
 
 
 
@@ -47,6 +48,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/slick.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,6 +61,15 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vue-slick/]
+          })
+        ]
+      }
+    }
   },
   env: {
     API_KEY
@@ -72,6 +83,8 @@ export default {
   css: [
     '~/assets/css/normalize',
     '~/assets/css/style',
+    'slick-carousel/slick/slick.css',
+    'slick-carousel/slick/slick-theme.css'
   ],
 
   buildModules: ["nuxt-microcms-module"],
