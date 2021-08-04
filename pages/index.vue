@@ -14,7 +14,7 @@
         <div class="case_contents_wrapper">
           <client-only>
             <slick :options="caseSlider">
-              <div class="" v-for="item in caseItems" v-bind:key="item.id">
+              <div class="" v-for="item in caseItems" :key="item.id">
                 <div class="case_contents_box">
                   <div
                     class="round_box box_golden case_img box_case_slider_img"
@@ -67,7 +67,7 @@
           <div
             class="shadow_box recommend_box"
             v-for="item in recommendItems"
-            v-bind:key="item.id"
+            :key="item.id"
           >
             <div class="shadow_box_inner">
               <div class="recommend_box_inner">
@@ -101,7 +101,7 @@
         </div>
         <div class="news_box_right">
           <ul class="news">
-            <li v-for="item in newsItems" v-bind:key="item.id">
+            <li v-for="item in newsItems" :key="item.id">
               <p class="news_date small">
                 {{ new Date(item.publishedAt).toLocaleDateString() }}
               </p>
@@ -126,7 +126,7 @@
           <div
             class="shadow_box flex_box_half"
             v-for="item in faqItems"
-            v-bind:key="item.id"
+            :key="item.id"
           >
             <div class="shadow_box_inner">
               <div class="flex_box_contents faq_content">
