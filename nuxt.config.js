@@ -1,6 +1,5 @@
 require("dotenv").config();
-// const { API_KEY } = process.env;
-// const { SERVICE_DOMAIN } = process.env;
+const { API_KEY, SERVICE_DOMAIN } = process.env;
 const nodeExternals = require("webpack-node-externals")
 
 
