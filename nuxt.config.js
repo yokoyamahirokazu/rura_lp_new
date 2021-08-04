@@ -96,8 +96,8 @@ export default {
   buildModules: ["nuxt-microcms-module"],
   microcms: {
     options: {
-      serviceDomain: "rura",
-      apiKey: "905f8b65-262a-41b6-8a39-dd16be30f5c2",
+      serviceDomain: SERVICE_DOMAIN,
+      apiKey: API_KEY,
     },
     mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
