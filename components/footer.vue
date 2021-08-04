@@ -45,7 +45,7 @@ export default Vue.extend({
       });
     },
     scrollWindow() {
-      const top = 200; // ボタンを表示させたい位置
+      const top = 500; // ボタンを表示させたい位置
       this.scroll = window.scrollY;
       if (top <= this.scroll) {
         this.buttonActive = true;
