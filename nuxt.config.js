@@ -5,6 +5,12 @@ const nodeExternals = require("webpack-node-externals")
 
 
 export default {
+
+  privateRuntimeConfig: {
+    MicroCmsApiKey: API_KEY,
+  },
+
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -56,7 +62,7 @@ export default {
 
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-microcms-module'],
+  modules: ['@nuxtjs/axios',],
   axios: {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
