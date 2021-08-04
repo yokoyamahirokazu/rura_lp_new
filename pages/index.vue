@@ -1,7 +1,7 @@
 <template>
   <div>
     <Eyecatch />
-    <section class="white">
+    <section class="white" id="case">
       <div class="case_contents">
         <div class="contents case_contents_headline">
           <div class="headline">
@@ -91,7 +91,7 @@
     <Unique />
     <ContactSection />
 
-    <section class="white">
+    <section class="white" id="news">
       <div class="contents news_box">
         <div class="news_box_left">
           <h2>
@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <section class="light">
+    <section class="light" id="faq">
       <div class="contents">
         <div class="headline">
           <h2>

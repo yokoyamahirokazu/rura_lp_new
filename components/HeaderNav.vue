@@ -14,12 +14,41 @@
         </button>
       </div>
       <ul>
-        <li><nuxt-link to="">導入事例</nuxt-link></li>
-        <li><nuxt-link to="">サービス</nuxt-link></li>
-        <li><nuxt-link to="">シーン</nuxt-link></li>
-        <li><nuxt-link to="">デザイン</nuxt-link></li>
-        <li><nuxt-link to="">機能</nuxt-link></li>
-        <li><nuxt-link to="">FAQ</nuxt-link></li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#case"
+            >導入事例</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#service"
+            >サービス</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#scene"
+            >シーン</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#design"
+            >デザイン</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#unique"
+            >機能</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#news"
+            >お知らせ</nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link @click.native="navOpen = !navOpen" to="#faq"
+            >FAQ</nuxt-link
+          >
+        </li>
       </ul>
       <div class="button_box">
         <nuxt-link to="/contact" class="button yellow">
