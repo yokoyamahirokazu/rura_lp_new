@@ -96,7 +96,7 @@ export default {
   buildModules: ["nuxt-microcms-module"],
   microcms: {
     options: {
-      serviceDomain: SERVICE_DOMAIN,
+      serviceDomain: 'rura',
       apiKey: API_KEY,
     },
     mode: process.env.NODE_ENV === "production" ? "server" : "all",
