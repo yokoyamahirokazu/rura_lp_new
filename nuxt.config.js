@@ -1,5 +1,6 @@
 require("dotenv").config();
-const { API_KEY } = process.env;
+// const { API_KEY } = process.env;
+// const { SERVICE_DOMAIN } = process.env;
 const nodeExternals = require("webpack-node-externals")
 
 
@@ -96,10 +97,10 @@ export default {
   buildModules: ["nuxt-microcms-module"],
   microcms: {
     options: {
-      serviceDomain: 'rura',
+      serviceDomain: SERVICE_DOMAIN,
       apiKey: API_KEY,
     },
-    mode: process.env.NODE_ENV === "production" ? "server" : "all",
+    // mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
 
 }
