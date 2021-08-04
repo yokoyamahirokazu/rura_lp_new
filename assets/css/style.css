@@ -59,6 +59,7 @@
 
 html{
   line-height: 0;
+  scroll-behavior: smooth;
 }
 
 html,body{
@@ -179,7 +180,7 @@ header::before{
 }
 
 
-@media screen and (max-width:940px){
+@media screen and (max-width:1000px){
 
     header{
     height: 50px;
@@ -305,7 +306,7 @@ nav .nav_logo{
 nav .button_box{
   display: none;
 }
-@media screen and (max-width:1024px){
+@media screen and (max-width:1140px){
 .nav_contact p{
  display: none;
 }
@@ -315,7 +316,7 @@ nav{
 }
 
 }
-@media screen and (max-width:940px){
+@media screen and (max-width:1000px){
 
   .nav_contact{
     right: 0;
@@ -1181,12 +1182,14 @@ p.news_date{
 
 .page_top_btn{
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 15px;
   width: 50px;
   height: 50px;
   border-radius: 25px;
   min-width: auto;
+  z-index: 999;
+
 }
 .page_top_btn img{
   width: 30px;
@@ -1411,6 +1414,23 @@ p.news_date{
 }
 
 
+.page_top_btn{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  min-width: auto;
+  z-index: 999;
+  padding: 0;
+}
+
+.page_top_btn img{
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}
 
 }
 
@@ -1699,7 +1719,252 @@ h1.eyecacth_subcopy{
   font-size: 1.2rem;
 }
 
+}
 
+
+/* eyecatch animation */
+
+.bg_1{
+}
+.bg_2{
+  animation: bg_2 15s linear infinite;
+}
+.bg_3{
+  animation: bg_3 15s linear infinite;
+}
+
+
+@keyframes bg_2 {
+    0% {
+      opacity: 0;
+    }
+    31% {
+      opacity: 0;
+    }
+    33.3333% {
+      opacity: 1;
+    }
+     66.66666% {
+      opacity: 1;
+    }
+    67% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+@keyframes bg_3 {
+    0% {
+      opacity: 0;
+    }
+    64% {
+      opacity: 0;
+    }
+    66.66666% {
+      opacity: 1;
+    }
+   97.99999%{
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+
+.ho_1{
+  animation: ho_1 15s linear infinite;
+}
+.ho_2{
+  animation: ho_2 15s linear infinite;
+}
+
+
+
+@keyframes ho_1 {
+    0% {
+      opacity: 0;
+    }
+    2%{
+      opacity: 0;
+    }
+    3%{
+      opacity: 1;
+    }
+   30%{
+      opacity: 1;
+    }
+    32% {
+      opacity: 0;
+    }
+    34% {
+      opacity: 0;
+    }
+    97.9999%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+  @keyframes ho_2 {
+    0% {
+      opacity: 0;
+    }
+      2%{
+      opacity: 0;
+    }
+     3%{
+      opacity: 1;
+    }
+   30%{
+      opacity: 1;
+    }
+    32% {
+      opacity: 0;
+    }
+    34% {
+      opacity: 0;
+    }
+    97.9999%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+
+.tb_1{
+  animation: tb_1 15s linear infinite;
+}
+.tb_2{
+  animation: tb_2 15s linear infinite;
+}
+.tb_3{
+  animation: tb_3 15s linear infinite;
+}
+
+
+@keyframes tb_1 {
+    0% {
+      opacity: 0;
+    }
+
+   34.33333%{
+      opacity: 0;
+    }
+   36.33333%{
+      opacity: 1;
+    }
+   62%{
+      opacity: 1;
+    }
+   64%{
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+  @keyframes tb_2 {
+     0% {
+      opacity: 0;
+    }
+
+   34.33333%{
+      opacity: 0;
+    }
+   36.33333%{
+      opacity: 1;
+    }
+   62%{
+      opacity: 1;
+    }
+   64%{
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+  @keyframes tb_3 {
+    0% {
+      opacity: 0;
+    }
+
+   34.33333%{
+      opacity: 0;
+    }
+   36.33333%{
+      opacity: 1;
+    }
+   62%{
+      opacity: 1;
+    }
+   64%{
+      opacity: 0;
+    }
+
+
+    100% {
+      opacity: 0;
+    }
+}
+
+
+.ve_1{
+  animation: ve_1 15s linear infinite;
+}
+.ve_2{
+  animation: ve_2 15s linear infinite;
+}
+
+@keyframes ve_1 {
+    0% {
+      opacity: 0;
+    }
+    65% {
+      opacity: 0;
+    }
+  67.66666% {
+      opacity: 0;
+    }
+    69.66666% {
+      opacity: 1;
+    }
+   96%{
+      opacity: 1;
+    }
+   98%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+@keyframes ve_2 {
+    0% {
+      opacity: 0;
+    }
+    67.66666% {
+      opacity: 0;
+    }
+    69.66666% {
+      opacity: 1;
+    }
+   96%{
+      opacity: 1;
+    }
+   98%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
 }
 
 

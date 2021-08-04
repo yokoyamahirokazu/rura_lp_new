@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="light">
+    <section class="light" id="service">
       <div class="contents contents_no_pb">
         <div class="headline">
           <h2>

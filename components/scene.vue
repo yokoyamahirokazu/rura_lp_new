@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="white">
+    <section class="white" id="scene">
       <div class="contents">
         <div class="headline">
           <h2>

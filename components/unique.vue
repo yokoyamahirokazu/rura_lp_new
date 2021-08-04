@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="light">
+    <section class="light" id="unique">
       <div class="contents">
         <div class="headline">
           <h2>

@@ -2,9 +2,9 @@
   <div>
     <div class="eyecacth">
       <div class="eyecacth_bg">
-        <img src="~/assets/img/eye_bg_clinic.jpg" />
-        <!-- <img src="~/assets/img/eye_bg_cafe.jpg" /> -->
-        <!-- <img src="~/assets/img/eye_bg_hotel.jpg" /> -->
+        <img class="bg_1" src="~/assets/img/eye_bg_clinic.jpg" />
+        <img class="bg_2" src="~/assets/img/eye_bg_cafe.jpg" />
+        <img class="bg_3" src="~/assets/img/eye_bg_hotel.jpg" />
       </div>
       <div class="eyecacth_content">
         <p class="eyecacth_copy">接客を省コスト化するなら。</p>
@@ -29,15 +29,15 @@
             </div>
           </div>
           <div class="eyecacth_under_right">
-            <img src="~/assets/img/eye_display_horizontal.png" />
-            <img src="~/assets/img/eye_worker.png" />
+            <img class="ho_1" src="~/assets/img/eye_display_horizontal.png" />
+            <img class="ho_2" src="~/assets/img/eye_worker.png" />
 
-            <!-- <img src="~/assets/img/eye_display_tablet.png" />
-            <img src="~/assets/img/eye_tleepen.png" />
-            <img src="~/assets/img/eye_tablet_logo.png" /> -->
+            <img class="tb_1" src="~/assets/img/eye_display_tablet.png" />
+            <img class="tb_2" src="~/assets/img/eye_tleepen.png" />
+            <img class="tb_3" src="~/assets/img/eye_tablet_logo.png" />
 
-            <!-- <img src="~/assets/img/eye_display_vertical.png" />
-            <img src="~/assets/img/eye_avater.png" /> -->
+            <img class="ve_1" src="~/assets/img/eye_display_vertical.png" />
+            <img class="ve_1" src="~/assets/img/eye_avater.png" />
           </div>
         </div>
       </div>
