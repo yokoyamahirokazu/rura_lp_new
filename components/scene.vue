@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-      <p class="large">
+      <p class="large mb_2vw">
         他にも具体的な導入シーンや活用方法をご案内しております。詳しくはお問い合わせください。
       </p>
     </div>

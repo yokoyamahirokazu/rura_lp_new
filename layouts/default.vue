@@ -1,9 +1,6 @@
 <template>
   <div>
     <Header />
-    <div>
-      <img src="~/assets/img/rura_lp_eyecatch_1.png" alt="" />
-    </div>
     <main>
       <nuxt />
     </main>
