@@ -59,7 +59,7 @@
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main">RURAをオススメする理由</span>
+              <span class="main fadein">RURAをオススメする理由</span>
             </h2>
           </div>
         </div>
@@ -97,7 +97,7 @@
           <h2>
             <span class="main">お知らせ</span>
           </h2>
-          <!-- <nuxt-link to="/news" class="button">View More</nuxt-link> -->
+          <nuxt-link to="/news" class="button">View More</nuxt-link>
         </div>
         <div class="news_box_right">
           <ul class="news">
@@ -235,16 +235,12 @@ export default {
   methods: {
     scrollItemA() {
       gsap.to(".fadein", {
-        autoAlpha: 0,
-        y: 50,
-        scrollTrigger: {
-          trigger: ".fadein", // 要素".a"がビューポートに入ったときにアニメーション開始
-          start: "center 80%", // アニメーション開始位置
-          markers: true, // マーカー表示
-        },
         duration: 1,
         autoAlpha: 1,
         y: 0,
+        scrollTrigger: {
+          trigger: ".fadein",
+        },
       });
     },
   },

@@ -45,7 +45,8 @@ export default {
     script: [
       {
         src: "https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"
-      }
+      },
+      // { src: 'https://sdk.form.run/js/v2/embed.js' }
     ]
   },
 
