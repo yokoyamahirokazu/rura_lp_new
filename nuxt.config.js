@@ -2,6 +2,7 @@ require("dotenv").config();
 const { API_KEY, SERVICE_DOMAIN } = process.env;
 const nodeExternals = require("webpack-node-externals")
 
+import axios from "axios";
 
 
 export default {
