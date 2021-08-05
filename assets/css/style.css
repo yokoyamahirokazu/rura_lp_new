@@ -1497,7 +1497,7 @@ p.news_date{
 
 .eyecacth_content{
   width: calc(100% - 8vw);
-  max-width: 1080px;
+  max-width: 1440px;
   margin: 0 auto;
   height: calc(100% - 80px);
   position: absolute;
