@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="lower">
     <Header />
     <main>
-      <div>こんにちわ</div>
       <nuxt />
     </main>
     <Footer />
@@ -18,3 +17,11 @@ export default {
   },
 };
 </script>
+<style>
+.lower header {
+  position: relative;
+}
+.lower header::before {
+  background-color: var(--primary-500);
+}
+</style>

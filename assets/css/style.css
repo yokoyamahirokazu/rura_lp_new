@@ -12,15 +12,10 @@
   --primary-800: #0070a4;
   --primary-900: #006492;
 
-  --secondary-100: #fffee9;
-  --secondary-200: #fffdbd;
-  --secondary-300: #fffb95;
-  --secondary-400: #fff970;
+
   --secondary-500: #FFF000;
-  --secondary-600: #fff72e;
-  --secondary-700: #fff610;
-  --secondary-800: #f4eb00;
-  --secondary-900: #dcd400;
+  --secondary-700: #FFD600;
+  --secondary-900: #FFB800;
 
   --error-050: #f7a3b1;
   --error-100: #f48194;
@@ -473,12 +468,13 @@ footer{
 
 section.contact{
     background-color: rgba(0,38,95,0.7);
-  background-image: url('~/assets/img/contact_section_bg.jpg');
+  background-image: url('~/assets/img/eye_bg_cafe.jpg');
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   z-index: 1;
+  color: #fff;
 }
 
 section.contact::before{
@@ -489,6 +485,7 @@ position: absolute;
 top:0;
 left: 0;
   box-shadow:0px -8px 15px -1px rgba(0, 35, 51, 0.5) inset;
+  background-blend-mode: multiply;
   z-index: 2;
 }
 
@@ -513,6 +510,8 @@ left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+    z-index: 3;
+
 }
 
 .contact_section_title{
@@ -794,6 +793,16 @@ section.light::after{
   top: 6px;
   background-color: var(--primary-900);
   content: " ";
+}
+
+section.thanks{
+  background-blend-mode: multiply;
+  background-image: url('~/assets/img/eye_bg_cafe.jpg');
+  background-color: rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 }
 
 
@@ -1207,6 +1216,8 @@ p.news_date{
   opacity: 0;
 }
 
+
+
 @media screen and (max-width:960px){
   .design_box {
     width: 100%;
@@ -1467,7 +1478,20 @@ p.news_date{
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  z-index: 0;
 }
+.eyecacth_bg::before{
+    width: 100%;
+  height: 100%;
+  position: absolute;
+  left:0;
+  top: 0;
+  content: " ";
+  background: linear-gradient(83.91deg, rgba(0, 39, 95, 0.7) 3.72%, rgba(0, 160, 233, 0) 181.53%);
+  z-index: 1;
+  background-blend-mode: multiply;
+  mix-blend-mode: multiply;
+  }
 
 
 
@@ -2096,4 +2120,35 @@ h1.eyecacth_subcopy{
   width: 100%;
   margin: 0;
 }
+}
+
+
+/* thanks */
+
+
+section.thanks{
+ background-color: rgba(0,38,95,0.7);
+  background-image: url('~/assets/img/eye_bg_cafe.jpg');
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+
+
+.thanks_logo{
+margin:  0 0 4vw;
+display: inline-flex;
+}
+
+.thanks_logo .footer_logo_copy{
+  margin: 0 10px 0 0;
+}
+
+.thanks_under_btn{
+  display: block;
+  margin: 4vw 0 4vw 0;
+
 }

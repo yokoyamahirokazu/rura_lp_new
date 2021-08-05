@@ -98,4 +98,20 @@ export default {
     // mode: process.env.NODE_ENV === "production" ? "server" : "all",
   },
 
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://rura.microcms.io/api/v1/news/', {
+          headers: { 'X-API-KEY': API_KEY }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/news/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
+  },
+
 }
