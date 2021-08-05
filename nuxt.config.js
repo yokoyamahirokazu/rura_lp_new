@@ -72,7 +72,8 @@ export default {
           })
         ]
       }
-    }
+    },
+    transpile: ['gsap']
   },
   env: {
     API_KEY
@@ -85,9 +86,9 @@ export default {
 
   css: [
     '~/assets/css/normalize',
-    '~/assets/css/style',
     'slick-carousel/slick/slick.css',
-    'slick-carousel/slick/slick-theme.css'
+    'slick-carousel/slick/slick-theme.css',
+    '~/assets/css/style',
   ],
 
   buildModules: ["nuxt-microcms-module"],

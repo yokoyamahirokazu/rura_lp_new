@@ -6,7 +6,7 @@
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main">導入事例</span
+              <span class="main fadein">導入事例</span
               ><span class="sub_title">導入店舗、ぞくぞく増加中！</span>
             </h2>
           </div>
@@ -143,6 +143,12 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 const { createClient } = microcms;
 
 import ContactSection from "@/components/ContactSection.vue";
@@ -222,6 +228,25 @@ export default {
         ],
       },
     };
+  },
+  mounted() {
+    this.scrollItemA();
+  },
+  methods: {
+    scrollItemA() {
+      gsap.to(".fadein", {
+        autoAlpha: 0,
+        y: 50,
+        scrollTrigger: {
+          trigger: ".fadein", // 要素".a"がビューポートに入ったときにアニメーション開始
+          start: "center 80%", // アニメーション開始位置
+          markers: true, // マーカー表示
+        },
+        duration: 1,
+        autoAlpha: 1,
+        y: 0,
+      });
+    },
   },
 };
 </script>
