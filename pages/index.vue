@@ -112,7 +112,7 @@
             to="/news"
             class="button"
             v-scroll-inview:fadeIn="fadeInOption"
-            >View More</nuxt-link
+            >もっと見る</nuxt-link
           >
         </div>
         <div class="news_box_right">

@@ -15,7 +15,7 @@ export default class {
     }
 
     anime() {
-        TweenMax.to(this.el, 1, {
+        TweenMax.to(this.el, 0.8, {
             alpha: 1,
             y: 0,
             ease: "power2.out"
