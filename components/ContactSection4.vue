@@ -27,7 +27,7 @@
                 @click="
                   gtag('event', 'click', {
                     event_category: 'contact',
-                    event_label: 'click_contact_3',
+                    event_label: 'click_contact_6',
                   })
                 "
               >

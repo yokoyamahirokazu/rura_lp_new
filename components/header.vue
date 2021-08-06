@@ -2,7 +2,15 @@
   <div>
     <header>
       <div class="header_logo">
-        <nuxt-link to="/">
+        <nuxt-link
+          to="/"
+          @click="
+            gtag('event', 'click', {
+              header: 'contact',
+              event_label: 'click_header_logo',
+            })
+          "
+        >
           <img src="~/assets/img/rura_logo_white.svg" />
           <p class="small">遠隔接客サービス</p>
         </nuxt-link>

@@ -2,10 +2,27 @@
   <div>
     <section>
       <div class="contents news_box">
-        <div class="news_box_left">
-          <h2>
-            <span class="main">お知らせ</span>
-          </h2>
+        <div class="news_box_right news_post_right">
+          <div class="news_post">
+            <h1 class="title">{{ postData.title }}</h1>
+            <p class="">
+              {{ new Date(postData.publishedAt).toLocaleDateString() }}
+            </p>
+            <div
+              class="news_post_content"
+              v-html="postData.editorContent"
+            ></div>
+          </div>
+          <div class="news_post_back_to_btn">
+            <nuxt-link class="button" to="/news">お知らせ一覧に戻る</nuxt-link>
+            <nuxt-link class="button" to="/">トップページに戻る</nuxt-link>
+          </div>
+        </div>
+
+        <div class="news_box_left news_post_left">
+          <h3 class="news_post_related">
+            <span class="main">最新のお知らせ</span>
+          </h3>
           <ul class="news">
             <li v-for="item in newsItems" :key="item.id">
               <nuxt-link :to="`/news/${item.id}`">
@@ -17,16 +34,9 @@
             </li>
           </ul>
         </div>
-        <div class="news_box_right">
-          <h1 class="title">{{ postData.title }}</h1>
-          <p class="">
-            {{ new Date(postData.publishedAt).toLocaleDateString() }}
-          </p>
-          <div class="post" v-html="postData.editorContent"></div>
-        </div>
       </div>
     </section>
-    <ContactSection />
+    <ContactSection6 />
   </div>
 </template>
 
@@ -34,12 +44,12 @@
 import axios from "axios";
 const { createClient } = microcms;
 
-import ContactSection from "@/components/ContactSection.vue";
+import ContactSection6 from "@/components/ContactSection6.vue";
 export default {
   layout: "lower",
 
   components: {
-    ContactSection,
+    ContactSection6,
   },
 
   async asyncData({ params, $microcms }) {
@@ -51,7 +61,10 @@ export default {
     );
     const newsData = await $microcms.get({
       endpoint: "news",
-      queries: { limit: 5, orders: "-publishedAt" },
+      queries: {
+        limit: 10,
+        orders: "-publishedAt",
+      },
     });
     return {
       postData: data,
