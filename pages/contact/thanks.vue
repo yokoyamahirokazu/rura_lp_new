@@ -19,10 +19,10 @@
           資料は下記ボタンよりダウンロードいただけます。
         </p>
         <div class="thanks_under_btn">
-          <nuxt-link to="/download_url" class="button yellow"
-            ><img
-              src="~/assets/icon/file-text.svg"
-            />資料ダウンロード</nuxt-link
+          <a
+            href="https://drive.google.com/file/d/1YvNmlliK4gPVTtgfebTQ6AKVf0mmo1om/view"
+            class="button yellow"
+            ><img src="~/assets/icon/file-text.svg" />資料ダウンロード</a
           >
         </div>
       </div>
@@ -32,6 +32,8 @@
 
 <script>
 export default {
+  middleware: "reject-direct",
+
   layout: "lower",
 };
 </script>
