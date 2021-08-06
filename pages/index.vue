@@ -6,19 +6,15 @@
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main" v-scroll-inview:fadeIn="fadeInOption"
-                >導入事例</span
-              ><span class="sub_title" v-scroll-inview:fadeIn="fadeInOption"
+              <span class="main" v-scroll-inview:fadeIn>導入事例</span
+              ><span class="sub_title" v-scroll-inview:fadeIn
                 >導入店舗、ぞくぞく増加中！</span
               >
             </h2>
           </div>
         </div>
 
-        <div
-          class="case_contents_wrapper"
-          v-scroll-inview:fadeIn="fadeInOption"
-        >
+        <div class="case_contents_wrapper" v-scroll-inview:fadeIn>
           <client-only>
             <slick :options="caseSlider">
               <div class="" v-for="item in caseItems" v-bind:key="item.id">
@@ -66,13 +62,13 @@
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main" v-scroll-inview:fadeIn="fadeInOption"
+              <span class="main" v-scroll-inview:fadeIn
                 >RURAをオススメする理由</span
               >
             </h2>
           </div>
         </div>
-        <slick :options="recommendSlider" v-scroll-inview:fadeIn="fadeInOption">
+        <slick :options="recommendSlider" v-scroll-inview:fadeIn>
           <div
             class="shadow_box recommend_box"
             v-for="item in recommendItems"
@@ -104,24 +100,15 @@
       <div class="contents news_box">
         <div class="news_box_left">
           <h2>
-            <span class="main" v-scroll-inview:fadeIn="fadeInOption"
-              >お知らせ</span
-            >
+            <span class="main" v-scroll-inview:fadeIn>お知らせ</span>
           </h2>
-          <nuxt-link
-            to="/news"
-            class="button"
-            v-scroll-inview:fadeIn="fadeInOption"
+          <nuxt-link to="/news" class="button" v-scroll-inview:fadeIn
             >もっと見る</nuxt-link
           >
         </div>
         <div class="news_box_right">
           <ul class="news">
-            <li
-              v-scroll-inview:fadeIn="fadeInOption"
-              v-for="item in newsItems"
-              :key="item.id"
-            >
+            <li v-scroll-inview:fadeIn v-for="item in newsItems" :key="item.id">
               <p class="news_date small">
                 {{ new Date(item.publishedAt).toLocaleDateString() }}
               </p>
@@ -136,16 +123,15 @@
       <div class="contents">
         <div class="headline">
           <h2>
-            <span class="main" v-scroll-inview:fadeIn="fadeInOption"
-              >よくあるご質問</span
-            ><span class="sub_title" v-scroll-inview:fadeIn="fadeInOption"
+            <span class="main" v-scroll-inview:fadeIn>よくあるご質問</span
+            ><span class="sub_title" v-scroll-inview:fadeIn
               >遠隔接客サービスが様々な業界で活用されています。</span
             >
           </h2>
         </div>
         <div class="flex_box faq_content">
           <div
-            v-scroll-inview:fadeIn="fadeInOption"
+            v-scroll-inview:fadeIn
             class="shadow_box flex_box_half"
             v-for="item in faqItems"
             v-bind:key="item.id"
