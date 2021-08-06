@@ -34,34 +34,45 @@
                     type="radio"
                     name="お問い合わせの種類"
                     value="RURAの資料ダウンロード"
+                    required
+                    v-model="$v.form.contacnt_type.$model"
                   />
                   RURAの資料ダウンロード
                 </label>
 
                 <label class="check_box">
                   <input
+                    required
                     type="radio"
                     name="お問い合わせの種類"
                     value="RURAに関する詳細な説明がほしい"
+                    v-model="$v.form.contacnt_type.$model"
                   />
                   RURAに関する詳細な説明がほしい
                 </label>
                 <label class="check_box">
                   <input
+                    required
                     type="radio"
                     name="お問い合わせの種類"
                     value="RURAを自社に導入することを検討している"
+                    v-model="$v.form.contacnt_type.$model"
                   />
                   RURAを自社に導入することを検討している
                 </label>
                 <label class="check_box">
                   <input
+                    required
                     type="radio"
                     name="お問い合わせの種類"
                     value="RURAを代理店として扱いたい／自社サービスと組み合わせて扱いたい"
+                    v-model="$v.form.contacnt_type.$model"
                   />
                   RURAを代理店として扱いたい／自社サービスと組み合わせて扱いたい
                 </label>
+              </div>
+              <div class="text_danger" v-if="$v.form.contacnt_type.$error">
+                お問い合わせの種類を選択してください
               </div>
             </div>
 
@@ -71,7 +82,14 @@
                   >必須</span
                 ></span
               >
-              <textarea name="お問い合わせ内容詳細"></textarea>
+              <textarea
+                required
+                name="お問い合わせ内容詳細"
+                v-model="$v.form.body.$model"
+              ></textarea>
+              <div class="text_danger" v-if="$v.form.body.$error">
+                お問い合わせ内容を入力しください
+              </div>
             </div>
 
             <!-- ↓自由に要素を追加・編集することができます -->
@@ -79,7 +97,14 @@
               <span class="form_title"
                 >お名前<span class="form_title_small required">必須</span></span
               >
-              <input name="お名前" type="text" v-model="$v.form.name.$model" />
+              <input　required
+                name="お名前"
+                type="text"
+                v-model="$v.form.name.$model"
+              />
+              <div class="text_danger" v-if="$v.form.name.$error">
+                お名前を入力しください
+              </div>
             </div>
 
             <div class="contact_form_box">
@@ -89,10 +114,15 @@
                 ></span
               >
               <input
+                required
                 name="メールアドレス"
                 type="text"
                 data-formrun-type="email"
+                v-model="$v.form.mail.$model"
               />
+              <div class="text_danger" v-if="$v.form.mail.$error">
+                メールアドレスを入力しください
+              </div>
             </div>
             <div class="contact_form_box">
               <span class="form_title"
@@ -100,26 +130,47 @@
                   >必須</span
                 ></span
               >
-              <input type="text" name="電話番号" data-formrun-type="tel" />
+              <input
+                required
+                type="text"
+                name="電話番号"
+                data-formrun-type="tel"
+                v-model="$v.form.tel.$model"
+              />
+              <div class="text_danger" v-if="$v.form.tel.$error">
+                電話番号を入力しください
+              </div>
             </div>
 
             <div class="contact_form_box">
               <span class="form_title"
                 >会社名<span class="form_title_small required">必須</span></span
               >
-              <input name="会社名" type="text" />
+              <input
+                required
+                name="会社名"
+                type="text"
+                v-model="$v.form.company.$model"
+              />
+              <div class="text_danger" v-if="$v.form.company.$error">
+                会社名を入力しください
+              </div>
             </div>
             <div class="contact_form_box">
               <span class="form_title"
                 >役職<span class="form_title_small">任意</span></span
               >
-              <input name="役職" type="text" />
+              <input name="役職" type="text" v-model="$v.form.officer.$model" />
             </div>
             <div class="contact_form_box">
               <span class="form_title"
                 >部署<span class="form_title_small">任意</span></span
               >
-              <input name="部署" type="text" />
+              <input
+                name="部署"
+                type="text"
+                v-model="$v.form.department.$model"
+              />
             </div>
 
             <div class="contact_form_box">
@@ -228,14 +279,7 @@
               />
             </div>
             <div class="submit_box">
-              <button
-                class="button"
-                type="submit"
-                data-formrun-error-text="未入力の項目があります"
-                data-formrun-submitting-text="送信中..."
-              >
-                送信する
-              </button>
+              <button class="button" type="submit">送信する</button>
             </div>
           </div>
         </form>
@@ -245,31 +289,46 @@
 </template>
 
 <script>
-import { required } from "vuelidate/lib/validators";
+import { required, maxLength, minLength } from "vuelidate/lib/validators";
 
 export default {
   layout: "lower",
   data() {
     return {
       form: {
-        name: "",
-        body: "",
+        contacnt_type: "", //お問い合わせの種類
+        body: "", //お問い合わせ内容詳細
+        name: "", //お名前
+        mail: "", //メールアドレス
+        tel: "", //電話番号
+        company: "", //会社名
+        officer: null, //役職
+        department: null, //部署
+        which: null, // RURAをどちらでお知りになりましたか？
       },
     };
   },
   methods: {
     submit() {
+      this.$v.$touch();
       if (this.$v.$invalid) {
         console.log("バリデーションエラー");
       } else {
-        console.log(this.form);
+        this.$emit("submit", this.$v);
       }
     },
   },
   validations: {
     form: {
-      name: { required },
-      body: {},
+      contacnt_type: { required }, //お問い合わせの種類
+      body: { required }, //お問い合わせ内容詳細
+      name: { required }, //お名前
+      mail: { required }, //メールアドレス
+      tel: { required }, //電話番号
+      company: { required }, //会社名
+      officer: {}, //役職
+      department: {}, //部署
+      which: {}, // RURAをどちらでお知りになりましたか？
     },
   },
 };
