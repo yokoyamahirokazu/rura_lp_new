@@ -20,6 +20,7 @@
         </p>
         <div class="thanks_under_btn">
           <a
+            target="_blank"
             href="https://drive.google.com/file/d/1YvNmlliK4gPVTtgfebTQ6AKVf0mmo1om/view"
             class="button yellow"
             ><img src="~/assets/icon/file-text.svg" />資料ダウンロード</a
@@ -32,8 +33,6 @@
 
 <script>
 export default {
-  middleware: "reject-direct",
-
   layout: "lower",
 };
 </script>

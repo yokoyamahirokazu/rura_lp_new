@@ -1,6 +1,6 @@
 <template>
   <div class="lower">
-    <Header />
+    <HeaderLower />
     <main>
       <nuxt />
     </main>
@@ -8,11 +8,11 @@
   </div>
 </template>
 <script>
-import Header from "@/components/header.vue"; // headerをインポート
+import HeaderLower from "@/components/headerLower.vue"; // headerLowerをインポート
 import Footer from "@/components/footer.vue"; // footerをインポート
 export default {
   components: {
-    Header,
+    HeaderLower,
     Footer,
   },
 };
