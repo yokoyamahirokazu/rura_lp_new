@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { API_KEY, SERVICE_DOMAIN } = process.env;
+const { API_KEY, SERVICE_DOMAIN, GOOGLE_ANALYTICS_ID } = process.env;
 const nodeExternals = require("webpack-node-externals")
 
 import axios from "axios";
@@ -52,7 +52,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/slick.js', mode: 'client' }
+    { src: '~/plugins/slick.js', mode: 'client' },
+    { src: '~/plugins/scrollInview' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -60,9 +61,15 @@ export default {
 
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios',],
+  modules: ['@nuxtjs/axios',
+    ['@nuxtjs/google-gtag', {
+      id: 'UA-168809361-1',
+      debug: true
+    }],],
   axios: {
   },
+
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extend(config, ctx) {
@@ -74,7 +81,17 @@ export default {
         ]
       }
     },
-    transpile: ['gsap']
+    transpile: ['gsap'],
+    babel: {
+      plugins: [
+        [
+          "@babel/plugin-proposal-private-property-in-object",
+          {
+            "loose": true
+          }
+        ]
+      ]
+    }
   },
   env: {
     API_KEY

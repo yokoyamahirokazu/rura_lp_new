@@ -15,37 +15,93 @@
       </div>
       <ul>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#case"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#case"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_case-study',
+              })
+            "
             >導入事例</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#service"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#service"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_service',
+              })
+            "
             >サービス</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#scene"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#scene"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_scene',
+              })
+            "
             >シーン</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#design"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#design"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_design',
+              })
+            "
             >デザイン</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#unique"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#unique"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_function',
+              })
+            "
             >機能</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#news"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#news"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_news',
+              })
+            "
             >お知らせ</nuxt-link
           >
         </li>
         <li>
-          <nuxt-link @click.native="navOpen = !navOpen" to="#faq"
+          <nuxt-link
+            @click.native="navOpen = !navOpen"
+            to="#faq"
+            @click="
+              gtag('event', 'click', {
+                event_category: 'anchor',
+                event_label: 'click_header_faq',
+              })
+            "
             >FAQ</nuxt-link
           >
         </li>
@@ -59,7 +115,16 @@
     </nav>
     <div class="nav_contact">
       <p class="small">無料デモ<br />資料ダウンロード</p>
-      <nuxt-link to="/contact" class="button yellow header_contact">
+      <nuxt-link
+        to="/contact"
+        class="button yellow header_contact"
+        @click="
+          gtag('event', 'click', {
+            event_category: 'contact',
+            event_label: 'click_contact_1',
+          })
+        "
+      >
         <img src="~/assets/icon/icon_contact.svg" /><span>お問い合わせ</span>
       </nuxt-link>
     </div>

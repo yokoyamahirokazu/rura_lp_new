@@ -8,11 +8,12 @@
             ><span class="sub_title"></span>
           </h2>
         </div>
-        <div
-          class="“formrun-embed”"
-          data-formrun-form="“@timeleap-1620463532”"
-          data-formrun-redirect="“true”"
-        ></div>
+   <script src=“https://sdk.form.run/js/v2/embed.js”></script>
+<div
+  class=“formrun-embed”
+  data-formrun-form=“@timeleap-1620463532”
+  data-formrun-redirect=“true”>
+</div>
       </div>
     </section>
   </div>

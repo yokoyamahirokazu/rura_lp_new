@@ -1,17 +1,24 @@
 <template>
   <div>
     <Eyecatch />
-    <section class="white" id="case">
-      <div class="case_contents">
+    <section class="white">
+      <div class="case_contents" id="case">
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main fadein">導入事例</span
-              ><span class="sub_title">導入店舗、ぞくぞく増加中！</span>
+              <span class="main" v-scroll-inview:fadeIn="fadeInOption"
+                >導入事例</span
+              ><span class="sub_title" v-scroll-inview:fadeIn="fadeInOption"
+                >導入店舗、ぞくぞく増加中！</span
+              >
             </h2>
           </div>
         </div>
-        <div class="case_contents_wrapper">
+
+        <div
+          class="case_contents_wrapper"
+          v-scroll-inview:fadeIn="fadeInOption"
+        >
           <client-only>
             <slick :options="caseSlider">
               <div class="" v-for="item in caseItems" v-bind:key="item.id">
@@ -52,18 +59,20 @@
     <ContactSection />
     <Scene />
     <Design />
-    <ContactSection />
+    <ContactSection2 />
 
     <section class="white">
       <div class="case_contents">
         <div class="contents case_contents_headline">
           <div class="headline">
             <h2>
-              <span class="main fadein">RURAをオススメする理由</span>
+              <span class="main" v-scroll-inview:fadeIn="fadeInOption"
+                >RURAをオススメする理由</span
+              >
             </h2>
           </div>
         </div>
-        <slick :options="recommendSlider">
+        <slick :options="recommendSlider" v-scroll-inview:fadeIn="fadeInOption">
           <div
             class="shadow_box recommend_box"
             v-for="item in recommendItems"
@@ -89,19 +98,30 @@
     </section>
 
     <Unique />
-    <ContactSection />
+    <ContactSection3 />
 
     <section class="white" id="news">
       <div class="contents news_box">
         <div class="news_box_left">
           <h2>
-            <span class="main">お知らせ</span>
+            <span class="main" v-scroll-inview:fadeIn="fadeInOption"
+              >お知らせ</span
+            >
           </h2>
-          <nuxt-link to="/news" class="button">View More</nuxt-link>
+          <nuxt-link
+            to="/news"
+            class="button"
+            v-scroll-inview:fadeIn="fadeInOption"
+            >View More</nuxt-link
+          >
         </div>
         <div class="news_box_right">
           <ul class="news">
-            <li v-for="item in newsItems" :key="item.id">
+            <li
+              v-scroll-inview:fadeIn="fadeInOption"
+              v-for="item in newsItems"
+              :key="item.id"
+            >
               <p class="news_date small">
                 {{ new Date(item.publishedAt).toLocaleDateString() }}
               </p>
@@ -116,14 +136,16 @@
       <div class="contents">
         <div class="headline">
           <h2>
-            <span class="main">よくあるご質問</span
-            ><span class="sub_title"
+            <span class="main" v-scroll-inview:fadeIn="fadeInOption"
+              >よくあるご質問</span
+            ><span class="sub_title" v-scroll-inview:fadeIn="fadeInOption"
               >遠隔接客サービスが様々な業界で活用されています。</span
             >
           </h2>
         </div>
         <div class="flex_box faq_content">
           <div
+            v-scroll-inview:fadeIn="fadeInOption"
             class="shadow_box flex_box_half"
             v-for="item in faqItems"
             v-bind:key="item.id"
@@ -138,20 +160,23 @@
         </div>
       </div>
     </section>
-    <ContactSection />
+    <ContactSection4 />
   </div>
 </template>
 
 <script>
+const { createClient } = microcms;
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (process.client) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const { createClient } = microcms;
-
 import ContactSection from "@/components/ContactSection.vue";
+import ContactSection2 from "@/components/ContactSection2.vue";
+import ContactSection3 from "@/components/ContactSection3.vue";
+import ContactSection4 from "@/components/ContactSection4.vue";
+import ContactSection5 from "@/components/ContactSection5.vue";
 import Service from "@/components/service.vue";
 import Scene from "@/components/scene.vue";
 import Design from "@/components/design.vue";
@@ -161,6 +186,10 @@ import Eyecatch from "@/components/eyecatch.vue";
 export default {
   components: {
     ContactSection,
+    ContactSection2,
+    ContactSection3,
+    ContactSection4,
+    ContactSection5,
     Service,
     Scene,
     Design,
@@ -228,21 +257,6 @@ export default {
         ],
       },
     };
-  },
-  mounted() {
-    this.scrollItemA();
-  },
-  methods: {
-    scrollItemA() {
-      gsap.to(".fadein", {
-        duration: 1,
-        autoAlpha: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".fadein",
-        },
-      });
-    },
   },
 };
 </script>

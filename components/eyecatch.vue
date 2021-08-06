@@ -21,7 +21,16 @@
                 <span> お店の無人化や人材不足に効果を発揮します。 </span>
               </h1>
               <div class="button_box">
-                <nuxt-link to="/contact" class="button yellow">
+                <nuxt-link
+                  to="/contact"
+                  class="button yellow"
+                  @click="
+                    gtag('event', 'click', {
+                      event_category: 'contact',
+                      event_label: 'click_contact_2',
+                    })
+                  "
+                >
                   <img src="~/assets/icon/icon_contact.svg" />お問い合わせ
                 </nuxt-link>
                 <p class="small">無料デモ・資料ダウンロード</p>
