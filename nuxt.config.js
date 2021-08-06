@@ -29,18 +29,18 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '~/assets/img/favicon.svg' },
-      { rel: 'icon alternate', href: '~/assets/img/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '~/assets/img/apple-touch-icon-180x180.png' },
-      { name: 'msapplication-square70x70logo', content: '~/assets/img/site-tile-70x70.png' },
-      { name: 'msapplication-square150x150logo', content: '~/assets/img/site-tile-150x150.png' },
-      { name: 'msapplication-wide310x150logo', content: '~/assets/img/site-tile-310x150.png' },
-      { name: 'msapplication-square310x310logo', content: '~/assets/img/site-tile-310x310.png' },
+      { hid: "favicon", rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { hid: "favicon", rel: 'icon alternate', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon-180x180.png' },
+      { name: 'msapplication-square70x70logo', content: '/site-tile-70x70.png' },
+      { name: 'msapplication-square150x150logo', content: '/site-tile-150x150.png' },
+      { name: 'msapplication-wide310x150logo', content: '/site-tile-310x150.png' },
+      { name: 'msapplication-square310x310logo', content: '/site-tile-310x310.png' },
       { name: 'msapplication-TileColor', content: '#00A0E9' },
       { property: 'og:title', content: 'RURA｜遠隔接客サービス' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'http://timeleap-rura.com' },
-      { property: 'og:image', content: '~/assets/img/og_image.jpg' },
+      { property: 'og:image', content: '/og_image.jpg' },
       { property: 'og:site_name', content: 'RURA｜遠隔接客サービス' },
       {
         property: 'og:description'
@@ -157,6 +157,9 @@ export default {
         )
       return pages
     }
+  },
+  pwa: {
+    icon: false
   },
 
 }
