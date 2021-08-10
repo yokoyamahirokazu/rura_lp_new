@@ -34,5 +34,18 @@
 <script>
 export default {
   layout: "lower",
+  head() {
+    return {
+      // titleタグ変更
+      title: "This is a title",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "descriptiondescriptiondescription",
+        },
+      ],
+    };
+  },
 };
 </script>

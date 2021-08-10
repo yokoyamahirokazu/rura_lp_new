@@ -20,7 +20,6 @@
           class="formrun"
           action="https://form.run/api/v1/r/6qnniqc9i4gs5fws420o5lw8"
           method="post"
-          data-formrun-confirm="true"
         >
           <div class="contact_form_content">
             <div class="contact_form_box">
@@ -100,7 +99,7 @@
               <input name="お名前" type="text" data-formrun-required />
 
               <span class="text_danger" data-formrun-show-if-error="お名前"
-                >お名前を正しく入力してくださいく</span
+                >お名前を正しく入力してください</span
               >
             </div>
 
