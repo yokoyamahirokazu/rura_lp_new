@@ -24,12 +24,7 @@
                 <nuxt-link
                   to="/contact"
                   class="button yellow"
-                  @click="
-                    gtag('event', 'click', {
-                      event_category: 'contact',
-                      event_label: 'click_contact_2',
-                    })
-                  "
+                  @click="truckCc2()"
                 >
                   <img src="~/assets/icon/icon_contact.svg" />お問い合わせ
                 </nuxt-link>
@@ -54,5 +49,14 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    truckCc2() {
+      this.$gtag("event", "click", {
+        event_category: "contact",
+        event_label: "click_contact_2",
+      });
+    },
+  },
+};
 </script>

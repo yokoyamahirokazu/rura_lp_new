@@ -19,12 +19,7 @@
                 v-scroll-inview:fadeIn
                 to="/contact"
                 class="button yellow"
-                @click="
-                  gtag('event', 'click', {
-                    event_category: 'contact',
-                    event_label: 'click_contact_article',
-                  })
-                "
+                @click="truckCcArticle()"
               >
                 <img src="~/assets/icon/icon_contact.svg" />お問い合わせ
               </nuxt-link>
@@ -52,6 +47,15 @@
 </template>
 <script>
 export default {
+  methods: {
+    truckCcArticle() {
+      this.$gtag("event", "click", {
+        event_category: "contact",
+        event_label: "click_contact_article",
+      });
+    },
+  },
+
   components: {},
 };
 </script>

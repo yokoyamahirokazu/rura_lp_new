@@ -85,13 +85,18 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios',
-    ['@nuxtjs/google-gtag', {
-      id: 'UA-168809361-1',
-      debug: true
-    }],
+    '@nuxtjs/google-gtag',
     '@nuxtjs/vuetify'],
   axios: {
   },
+
+
+
+  'google-gtag': {
+    id: GOOGLE_ANALYTICS_ID,
+    debug: true,
+  },
+
 
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -133,7 +138,7 @@ export default {
     '~/assets/css/style',
   ],
 
-  buildModules: ["nuxt-microcms-module"],
+  buildModules: ["nuxt-microcms-module",],
   microcms: {
     options: {
       serviceDomain: SERVICE_DOMAIN,

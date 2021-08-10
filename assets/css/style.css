@@ -175,7 +175,7 @@ header::before{
 }
 
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1040px){
 
     header{
     height: 50px;
@@ -311,7 +311,7 @@ nav{
 }
 
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width:1040px){
 
   .nav_contact{
     right: 0;
@@ -1585,7 +1585,7 @@ h3.small {
 
 }
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1040px){
   .eyecacth_content{
   height: calc(100% - 50px);
     top: 50px;
@@ -2366,7 +2366,9 @@ textarea{
   min-height: 160px;
 }
 
-.text_danger {
-  margin: 10px 0 0 0;
+span.text_danger {
+  margin: 6px 0 0 0;
   color: var(--error-500);
+  font-weight: 500;
+  display: inline-block;
 }
