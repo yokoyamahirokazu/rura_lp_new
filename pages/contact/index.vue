@@ -4,7 +4,7 @@
       <div class="contents contact_form">
         <div class="headline">
           <h2>
-            <span class="main">お問い合わせテスト</span
+            <span class="main">お問い合わせテスト用</span
             ><span class="sub_title"></span>
           </h2>
         </div>
