@@ -31,7 +31,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#scene"
-            @click="trackEventClick('anchor', 'click_header_scene')"
+            @click="trackEventClick()"
             >シーン</nuxt-link
           >
         </li>
@@ -90,10 +90,10 @@
 <script>
 export default {
   methods: {
-    trackEventClick(category, action) {
+    trackEventClick() {
       this.$gtag("event", "click", {
-        event_category: category,
-        event_label: action,
+        event_category: "anchor",
+        event_label: "click_header_scene",
         value: 1,
       });
     },
