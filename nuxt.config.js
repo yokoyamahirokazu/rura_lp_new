@@ -105,7 +105,7 @@ export default {
 
   'google-gtag': {
     id: process.env.GOOGLE_ANALYTICS_ID_G,
-    debug: true,
+    debug: false,
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
