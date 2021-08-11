@@ -94,7 +94,7 @@ export default {
   ],
 
   'google-gtag': {
-    id: process.env.GOOGLE_ANALYTICS_ID,
+    id: process.env.GOOGLE_ANALYTICS_ID_G,
     debug: true,
   },
 
