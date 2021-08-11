@@ -89,6 +89,7 @@ export default {
   plugins: [
     { src: '~/plugins/slick.js', mode: 'client' },
     { src: '~/plugins/scrollInview' },
+    { src: '~/plugins/adobeFont' },
 
   ],
 

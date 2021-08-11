@@ -33,6 +33,10 @@
 
 <script>
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   layout: "lower",
   head() {
     return {

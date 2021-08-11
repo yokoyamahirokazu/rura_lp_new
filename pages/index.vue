@@ -163,6 +163,10 @@ import Case from "@/components/case.vue";
 import Unique from "@/components/unique.vue";
 import Eyecatch from "@/components/eyecatch.vue";
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   components: {
     ContactSection,
     ContactSection2,

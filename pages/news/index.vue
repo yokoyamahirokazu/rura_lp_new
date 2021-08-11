@@ -32,6 +32,10 @@
 import ContactSection5 from "@/components/ContactSection5.vue";
 
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   layout: "lower",
 
   components: {
