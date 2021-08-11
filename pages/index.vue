@@ -231,6 +231,7 @@ export default {
         arrows: true,
         centerMode: true,
         variableWidth: true,
+        adaptiveHeight:false,
         responsive: [
           {
             breakpoint: 640,

@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="contents news_box">
+      <div class="contents news_box news_box_page">
         <div class="news_box_left">
           <h2>
             <span class="main">お知らせ一覧</span>
