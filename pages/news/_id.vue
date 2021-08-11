@@ -51,11 +51,11 @@ export default {
     ContactSection6,
   },
 
-  async asyncData({ params, $microcms, $config }) {
+  async asyncData({ params, $microcms }) {
     const { data } = await axios.get(
       `https://rura.microcms.io/api/v1/news/${params.id}`,
       {
-        headers: { "X-API-KEY": $config.apiKey },
+        headers: { "X-API-KEY": process.env.API_KEY },
       }
     );
     const newsData = await $microcms.get({
