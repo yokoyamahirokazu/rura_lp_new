@@ -15,10 +15,7 @@
       </div>
       <ul>
         <li>
-          <nuxt-link
-            @click.native="navOpen = !navOpen"
-            to="#case"
-            @click="truckCase()"
+          <nuxt-link @click.native="navOpen = !navOpen" to="#case"
             >導入事例</nuxt-link
           >
         </li>
@@ -26,7 +23,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#service"
-            @click="truckService()"
+            onclick="gtag('event', 'click', {'event_category': 'anchor','event_label': 'click_header_service'});"
             >サービス</nuxt-link
           >
         </li>
@@ -93,18 +90,13 @@
 <script>
 export default {
   methods: {
-    truckCase() {
-      this.$gtag("event", "click", {
-        event_category: "anchor",
-        event_label: "lick_header_case-study'",
+    trackEventClick(category, action) {
+      this.$ga.click({
+        eventCategory: category,
+        eventAction: action,
       });
     },
-    truckService() {
-      this.$gtag("event", "click", {
-        event_category: "anchor",
-        event_label: "click_header_service",
-      });
-    },
+
     truckScene() {
       this.$gtag("event", "click", {
         event_category: "anchor",
