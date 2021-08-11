@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="contents news_box">
+      <div class="contents news_box news_box_page">
         <div class="news_box_left">
           <h2>
             <span class="main">お知らせ一覧</span>
@@ -32,6 +32,17 @@
 import ContactSection5 from "@/components/ContactSection5.vue";
 
 export default {
+
+  head () {
+    return {
+      title: 'お知らせ一覧',
+      meta: [
+        { hid: 'description', name: 'description', content: 'お知らせ一覧' },
+      ],
+    }
+  },
+
+
   mounted() {
     this.$adobeFonts(document);
   },
@@ -41,7 +52,6 @@ export default {
   components: {
     ContactSection5,
   },
-
   async asyncData({ $microcms }) {
     const newsData = await $microcms.get({
       endpoint: "news",
@@ -56,5 +66,6 @@ export default {
       visible: false,
     };
   },
+
 };
 </script>
