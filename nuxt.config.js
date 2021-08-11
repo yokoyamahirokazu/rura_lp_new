@@ -85,7 +85,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios',
-    '@nuxtjs/google-gtag',
     '@nuxtjs/vuetify'],
   axios: {
   },
@@ -138,7 +137,9 @@ export default {
     '~/assets/css/style',
   ],
 
-  buildModules: ["nuxt-microcms-module",],
+  buildModules: ["nuxt-microcms-module",
+    '@nuxtjs/google-gtag',
+  ],
   microcms: {
     options: {
       serviceDomain: SERVICE_DOMAIN,
