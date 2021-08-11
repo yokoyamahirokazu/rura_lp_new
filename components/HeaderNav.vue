@@ -31,7 +31,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#scene"
-            @click="truckScene()"
+            @click="trackEventClick(anchor, click_header_scene)"
             >シーン</nuxt-link
           >
         </li>
@@ -91,9 +91,10 @@
 export default {
   methods: {
     trackEventClick(category, action) {
-      this.$ga.click({
-        eventCategory: category,
-        eventAction: action,
+      this.$gtag("event", "click", {
+        event_category: category,
+        event_label: action,
+        value: 1,
       });
     },
 
