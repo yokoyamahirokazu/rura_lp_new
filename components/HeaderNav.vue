@@ -31,7 +31,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#scene"
-            @click="trackEventClick(anchor, click_header_scene)"
+            @click="trackEventClick('anchor', 'click_header_scene')"
             >シーン</nuxt-link
           >
         </li>
