@@ -151,13 +151,6 @@
 </template>
 
 <script>
-const { createClient } = microcms;
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-if (process.client) {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 import ContactSection from "@/components/ContactSection.vue";
 import ContactSection2 from "@/components/ContactSection2.vue";
 import ContactSection3 from "@/components/ContactSection3.vue";
@@ -205,6 +198,7 @@ export default {
       recommendItems: recommendData.contents,
     };
   },
+
   data() {
     return {
       caseSlider: {

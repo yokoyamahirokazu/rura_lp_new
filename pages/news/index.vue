@@ -29,8 +29,6 @@
 </template>
 
 <script>
-const { createClient } = microcms;
-
 import ContactSection5 from "@/components/ContactSection5.vue";
 export default {
   layout: "lower",

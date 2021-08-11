@@ -1,16 +1,12 @@
-require("dotenv").config();
-const { API_KEY, SERVICE_DOMAIN, GOOGLE_ANALYTICS_ID } = process.env;
-const nodeExternals = require("webpack-node-externals")
 
-import axios from "axios"
+import axios from "axios";
 
 
 export default {
 
-
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
-
+  vue: {
+    devtools: true
+  },
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -72,87 +68,61 @@ export default {
     ]
   },
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/slick.js', mode: 'client' },
-    { src: '~/plugins/scrollInview' },
-    { src: '~/plugins/vuelidate.js' }
-  ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios',
-    '@nuxtjs/vuetify'],
-  axios: {
-  },
-
-
-
-  'google-gtag': {
-    id: GOOGLE_ANALYTICS_ID,
-    debug: true,
-  },
-
-
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    extend(config, ctx) {
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vue-slick/]
-          })
-        ]
-      }
-    },
-    transpile: ['gsap'],
-    babel: {
-      plugins: [
-        [
-          "@babel/plugin-proposal-private-property-in-object",
-          {
-            "loose": true
-          }
-        ]
-      ]
-    }
-  },
-  env: {
-    API_KEY
-  },
-  markdownit: {
-    html: true,
-    injected: true,
-    preset: 'default',
-  },
-
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/normalize',
     'slick-carousel/slick/slick.css',
     'slick-carousel/slick/slick-theme.css',
     '~/assets/css/style',
   ],
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [
+    { src: '~/plugins/slick.js', mode: 'client' },
+    { src: '~/plugins/scrollInview' },
 
-  buildModules: ["nuxt-microcms-module",
+  ],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    'nuxt-microcms-module',
+    '@nuxtjs/axios',
     '@nuxtjs/google-gtag',
   ],
+
+  'google-gtag': {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+    debug: true,
+  },
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+  ],
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
+    loadingScreen: false
+
+  },
   microcms: {
     options: {
-      serviceDomain: SERVICE_DOMAIN,
-      apiKey: API_KEY,
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.API_KEY,
     },
-    // mode: process.env.NODE_ENV === "production" ? "server" : "all",
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
+
+
+
 
   generate: {
     async routes() {
       const pages = await axios
         .get('https://rura.microcms.io/api/v1/news/', {
-          headers: { 'X-API-KEY': API_KEY }
+          headers: { 'X-API-KEY': process.env.API_KEY }
         })
         .then((res) =>
           res.data.contents.map((content) => ({
@@ -162,9 +132,6 @@ export default {
         )
       return pages
     }
-  },
-  pwa: {
-    icon: false
   },
 
 }
