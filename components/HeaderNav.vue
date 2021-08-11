@@ -39,7 +39,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#design"
-            @click="truckDesign()"
+            @click="truckDesign"
             >デザイン</nuxt-link
           >
         </li>
@@ -97,6 +97,13 @@ export default {
         value: 1,
       });
     },
+    truckDesign() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_design",
+        value: 1,
+      });
+    },
 
     truckScene() {
       this.$gtag("event", "click", {
@@ -104,12 +111,7 @@ export default {
         event_label: "click_header_scene",
       });
     },
-    truckDesign() {
-      this.$gtag("event", "click", {
-        event_category: "anchor",
-        event_label: "click_header_design",
-      });
-    },
+
     truckFunction() {
       this.$gtag("event", "click", {
         event_category: "anchor",

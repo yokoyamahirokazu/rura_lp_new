@@ -100,17 +100,17 @@ export default {
   buildModules: [
     'nuxt-microcms-module',
     '@nuxtjs/axios',
-    // ['@nuxtjs/google-analytics', {
-    //   id: process.env.GOOGLE_ANALYTICS_ID_G,
-    // }]
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GOOGLE_ANALYTICS_ID_G,
+    }],
 
-    '@nuxtjs/google-gtag',
+    // '@nuxtjs/google-gtag',
   ],
 
-  'google-gtag': {
-    id: process.env.GOOGLE_ANALYTICS_ID_G,
-    debug: true,
-  },
+  // 'google-gtag': {
+  //   id: process.env.GOOGLE_ANALYTICS_ID_G,
+  //   debug: true,
+  // },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
