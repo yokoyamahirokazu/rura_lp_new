@@ -32,6 +32,16 @@
 import ContactSection5 from "@/components/ContactSection5.vue";
 
 export default {
+
+  head () {
+    return {
+      title: 'お知らせ一覧',
+      meta: [
+        { hid: 'description', name: 'description', content: 'お知らせ一覧' },
+      ],
+    }
+  },
+
   mounted() {
     this.$adobeFonts(document);
   },
@@ -41,7 +51,6 @@ export default {
   components: {
     ContactSection5,
   },
-
   async asyncData({ $microcms }) {
     const newsData = await $microcms.get({
       endpoint: "news",
@@ -56,5 +65,6 @@ export default {
       visible: false,
     };
   },
+
 };
 </script>
