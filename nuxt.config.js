@@ -1,5 +1,8 @@
 
 import axios from "axios";
+require('dotenv').config();
+const { API_KEY, SERVICE_ID, GOOGLE_ANALYTICS_ID_G } = process.env;
+
 
 
 export default {
@@ -8,6 +11,11 @@ export default {
     devtools: true
   },
 
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined,
+    serviceId: process.env.NODE_ENV !== 'production' ? SERVICE_ID : undefined,
+    serviceId: process.env.NODE_ENV !== 'production' ? GOOGLE_ANALYTICS_ID_G : undefined,
+  },
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
