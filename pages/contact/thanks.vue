@@ -40,14 +40,14 @@ export default {
   layout: "lower",
   head() {
     return {
-      // titleタグ変更
-      title: "This is a title",
+      title: "送信完了｜遠隔接客サービス RURA",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "descriptiondescriptiondescription",
+          content: "RURAへのお問い合わせページです。",
         },
+        { hid: "robots", name: "robots", content: "noindex" },
       ],
     };
   },

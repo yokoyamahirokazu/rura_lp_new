@@ -32,16 +32,18 @@
 import ContactSection5 from "@/components/ContactSection5.vue";
 
 export default {
-
-  head () {
+  head() {
     return {
-      title: 'お知らせ一覧',
+      title: "お知らせ一覧｜遠隔接客サービス RURA",
       meta: [
-        { hid: 'description', name: 'description', content: 'お知らせ一覧' },
+        {
+          hid: "description",
+          name: "description",
+          content: "RURAのお知らせ一覧ページです。",
+        },
       ],
-    }
+    };
   },
-
 
   mounted() {
     this.$adobeFonts(document);
@@ -66,6 +68,5 @@ export default {
       visible: false,
     };
   },
-
 };
 </script>

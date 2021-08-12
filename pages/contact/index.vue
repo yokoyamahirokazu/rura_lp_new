@@ -287,6 +287,19 @@ export default {
   },
   layout: "lower",
 
+  head() {
+    return {
+      title: "お問い合わせ｜遠隔接客サービス RURA",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "RURAへのお問い合わせページです。",
+        },
+      ],
+    };
+  },
+
   mounted() {
     if (process.client) {
       this.loadFormrunScript();
