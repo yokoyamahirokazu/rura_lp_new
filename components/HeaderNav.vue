@@ -18,7 +18,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="#case"
-            @click="truckCase()"
+            @click="truckCase"
             >導入事例</nuxt-link
           >
         </li>
@@ -96,7 +96,7 @@ export default {
     truckCase() {
       this.$gtag("event", "click", {
         event_category: "anchor",
-        event_label: "lick_header_case-study'",
+        event_label: "click_header_case-study",
       });
     },
     truckService() {

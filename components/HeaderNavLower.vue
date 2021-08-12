@@ -96,7 +96,7 @@ export default {
     truckCase() {
       this.$gtag("event", "click", {
         event_category: "anchor",
-        event_label: "lick_header_case-study'",
+        event_label: "click_header_case-study'",
       });
     },
     truckService() {
