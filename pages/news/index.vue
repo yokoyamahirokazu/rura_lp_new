@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="contents news_box">
+      <div class="contents news_box news_box_page">
         <div class="news_box_left">
           <h2>
             <span class="main">お知らせ一覧</span>
@@ -29,16 +29,31 @@
 </template>
 
 <script>
-const { createClient } = microcms;
-
 import ContactSection5 from "@/components/ContactSection5.vue";
+
 export default {
+  head() {
+    return {
+      title: "お知らせ一覧｜遠隔接客サービス RURA",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "RURAのお知らせ一覧ページです。",
+        },
+      ],
+    };
+  },
+
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   layout: "lower",
 
   components: {
     ContactSection5,
   },
-
   async asyncData({ $microcms }) {
     const newsData = await $microcms.get({
       endpoint: "news",
@@ -52,20 +67,6 @@ export default {
     return {
       visible: false,
     };
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      if (!this.visible) {
-        var top = this.$el.getBoundingClientRect().top;
-        this.visible = top < window.innerHeight + 100;
-      }
-    },
   },
 };
 </script>

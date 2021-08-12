@@ -42,10 +42,13 @@
 
 <script>
 import axios from "axios";
-const { createClient } = microcms;
 
 import ContactSection6 from "@/components/ContactSection6.vue";
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   layout: "lower",
 
   components: {
@@ -69,6 +72,19 @@ export default {
     return {
       postData: data,
       newsItems: newsData.contents,
+      title: data.title,
+    };
+  },
+  head() {
+    return {
+      title: this.title + "｜遠隔接客サービス RURA",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.title + "の記事ページです",
+        },
+      ],
     };
   },
 };

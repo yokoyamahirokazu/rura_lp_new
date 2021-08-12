@@ -1,4 +1,4 @@
-# rura_lp_new
+# rura_lp_ssr
 
 ## Build Setup
 

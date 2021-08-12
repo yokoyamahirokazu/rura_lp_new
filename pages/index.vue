@@ -151,13 +151,6 @@
 </template>
 
 <script>
-const { createClient } = microcms;
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-if (process.client) {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 import ContactSection from "@/components/ContactSection.vue";
 import ContactSection2 from "@/components/ContactSection2.vue";
 import ContactSection3 from "@/components/ContactSection3.vue";
@@ -170,6 +163,10 @@ import Case from "@/components/case.vue";
 import Unique from "@/components/unique.vue";
 import Eyecatch from "@/components/eyecatch.vue";
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   components: {
     ContactSection,
     ContactSection2,
@@ -205,6 +202,7 @@ export default {
       recommendItems: recommendData.contents,
     };
   },
+
   data() {
     return {
       caseSlider: {
@@ -233,6 +231,7 @@ export default {
         arrows: true,
         centerMode: true,
         variableWidth: true,
+        adaptiveHeight: false,
         responsive: [
           {
             breakpoint: 640,

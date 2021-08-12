@@ -33,6 +33,23 @@
 
 <script>
 export default {
+  mounted() {
+    this.$adobeFonts(document);
+  },
+
   layout: "lower",
+  head() {
+    return {
+      title: "送信完了｜遠隔接客サービス RURA",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "RURAへのお問い合わせページです。",
+        },
+        { hid: "robots", name: "robots", content: "noindex" },
+      ],
+    };
+  },
 };
 </script>

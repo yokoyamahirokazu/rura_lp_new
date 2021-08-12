@@ -18,12 +18,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#case"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_case-study',
-              })
-            "
+            @click="truckCase()"
             >導入事例</nuxt-link
           >
         </li>
@@ -31,12 +26,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#service"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_service',
-              })
-            "
+            @click="truckService()"
             >サービス</nuxt-link
           >
         </li>
@@ -44,12 +34,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#scene"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_scene',
-              })
-            "
+            @click="truckScene()"
             >シーン</nuxt-link
           >
         </li>
@@ -57,12 +42,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#design"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_design',
-              })
-            "
+            @click="truckDesign()"
             >デザイン</nuxt-link
           >
         </li>
@@ -70,12 +50,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#unique"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_function',
-              })
-            "
+            @click="truckFunction()"
             >機能</nuxt-link
           >
         </li>
@@ -83,12 +58,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#news"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_news',
-              })
-            "
+            @click="truckNews()"
             >お知らせ</nuxt-link
           >
         </li>
@@ -96,12 +66,7 @@
           <nuxt-link
             @click.native="navOpen = !navOpen"
             to="/#faq"
-            @click="
-              gtag('event', 'click', {
-                event_category: 'anchor',
-                event_label: 'click_header_faq',
-              })
-            "
+            @click="truckFaq()"
             >FAQ</nuxt-link
           >
         </li>
@@ -118,12 +83,7 @@
       <nuxt-link
         to="/contact"
         class="button yellow header_contact"
-        @click="
-          gtag('event', 'click', {
-            event_category: 'contact',
-            event_label: 'click_contact_1',
-          })
-        "
+        @click="truckCc1()"
       >
         <img src="~/assets/icon/icon_contact.svg" /><span>お問い合わせ</span>
       </nuxt-link>
@@ -132,6 +92,57 @@
 </template>
 <script>
 export default {
+  methods: {
+    truckCase() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_case-study'",
+      });
+    },
+    truckService() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_service",
+      });
+    },
+    truckScene() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_scene",
+      });
+    },
+    truckDesign() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_design",
+      });
+    },
+    truckFunction() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_function",
+      });
+    },
+    truckNews() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_news",
+      });
+    },
+    truckFaq() {
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_faq",
+      });
+    },
+    truckCc1() {
+      this.$gtag("event", "click", {
+        event_category: "contact",
+        event_label: "click_contact_1",
+      });
+    },
+  },
+
   data() {
     return {
       navOpen: false,
