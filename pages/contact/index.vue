@@ -4,11 +4,10 @@
       <div class="contents contact_form">
         <div class="headline">
           <h2>
-            <span class="main">お問い合わせテスト</span
+            <span class="main">お問い合わせ</span
             ><span class="sub_title"></span>
           </h2>
         </div>
-
         <p>
           RURAにご関心いただきありがとうございます。
           必須項目を入力の上、フォームの送信をお願いします。<br />
