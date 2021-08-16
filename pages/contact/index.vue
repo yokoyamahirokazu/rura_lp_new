@@ -285,12 +285,6 @@
 
 <script>
 export default {
-  mounted() {
-    this.$adobeFonts(document);
-    if (process.client) {
-      this.loadFormrunScript();
-    }
-  },
   layout: "lower",
 
   head() {
@@ -305,7 +299,12 @@ export default {
       ],
     };
   },
-
+  mounted() {
+    this.$adobeFonts(document);
+    if (process.client) {
+      this.loadFormrunScript();
+    }
+  },
   // mounted() {
   //   if (process.client) {
   //     this.loadFormrunScript();
