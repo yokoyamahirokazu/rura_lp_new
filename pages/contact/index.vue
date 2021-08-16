@@ -101,7 +101,7 @@
                 <input
                   name="お名前"
                   type="text"
-                  v-modal="お名前"
+                  v-modal="inputName"
                   data-formrun-required
                 />
 
@@ -118,6 +118,7 @@
               </span>
               <input
                 type="text"
+                v-modal="inputMail"
                 name="メールアドレス"
                 data-formrun-type="email"
                 data-formrun-required
@@ -137,6 +138,7 @@
               >
               <input
                 type="text"
+                v-modal="inputTel"
                 name="電話番号"
                 data-formrun-type="tel"
                 data-formrun-required
@@ -150,7 +152,12 @@
               <span class="form_title"
                 >会社名<span class="form_title_small required">必須</span></span
               >
-              <input name="会社名" type="text" data-formrun-required />
+              <input
+                name="会社名"
+                v-modal="inputCompany"
+                type="text"
+                data-formrun-required
+              />
 
               <span class="text_danger" data-formrun-show-if-error="会社名"
                 >会社名を正しく入力してください</span
@@ -160,13 +167,13 @@
               <span class="form_title"
                 >役職<span class="form_title_small">任意</span></span
               >
-              <input name="役職" type="text" />
+              <input name="役職" type="text" v-modal="inputPost" />
             </div>
             <div class="contact_form_box">
               <span class="form_title"
                 >部署<span class="form_title_small">任意</span></span
               >
-              <input name="部署" type="text" />
+              <input name="部署" type="text" v-modal="inputDepartmaent" />
             </div>
 
             <div class="contact_form_box">
