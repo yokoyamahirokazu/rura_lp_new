@@ -308,7 +308,7 @@ export default {
 
   methods: {
     initFormrun() {
-      window.Formrun._reset(); // (2)の処理
+      // window.Formrun._reset(); // (2)の処理
       window.Formrun.init(".formrun"); // (3)の処理
     },
     loadFormrunScript() {
