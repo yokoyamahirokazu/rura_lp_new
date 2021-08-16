@@ -108,8 +108,8 @@
                 <span class="form_title_small required">必須</span>
               </span>
               <input
-                name="メールアドレス"
                 type="text"
+                name="メールアドレス"
                 data-formrun-type="email"
                 data-formrun-required
               />
@@ -317,7 +317,7 @@ export default {
         // 一度アクセスしたら、window.Formrunがあるので、(2),(3)の処理を呼んで終わり
         console.log("repeat init");
         this.initFormrun();
-        return; // 2回目からはここで終わり
+        // return; // 2回目からはここで終わり
       } // 初回のみ SDKを ロードする
       new Promise((resolve, reject) => {
         // (1). 該当スクリプトを動的にロード
