@@ -317,12 +317,12 @@ export default {
       window.Formrun.init(".formrun"); // (3)の処理
     },
     loadFormrunScript() {
-      if (window.Formrun) {
-        // 一度アクセスしたら、window.Formrunがあるので、(2),(3)の処理を呼んで終わり
-        console.log("repeat init");
-        this.initFormrun();
-        // return; // 2回目からはここで終わり
-      } // 初回のみ SDKを ロードする
+      // if (window.Formrun) {
+      //   // 一度アクセスしたら、window.Formrunがあるので、(2),(3)の処理を呼んで終わり
+      //   console.log("repeat init");
+      //   this.initFormrun();
+      //   // return; // 2回目からはここで終わり
+      // } // 初回のみ SDKを ロードする
       new Promise((resolve, reject) => {
         // (1). 該当スクリプトを動的にロード
         const script = document.createElement("script");
