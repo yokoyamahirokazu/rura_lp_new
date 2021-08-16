@@ -98,7 +98,12 @@
                     >必須</span
                   ></span
                 >
-                <input name="お名前" type="text" data-formrun-required />
+                <input
+                  name="お名前"
+                  type="text"
+                  v-modal="お名前"
+                  data-formrun-required
+                />
 
                 <span class="text_danger" data-formrun-show-if-error="お名前"
                   >お名前を正しく入力してください</span
@@ -308,10 +313,16 @@ export default {
 
   methods: {
     initFormrun() {
-      // window.Formrun._reset(); // (2)の処理
+      window.Formrun._reset(); // (2)の処理
       window.Formrun.init(".formrun"); // (3)の処理
     },
     loadFormrunScript() {
+      if (window.Formrun) {
+        // 一度アクセスしたら、window.Formrunがあるので、(2),(3)の処理を呼んで終わり
+        console.log("repeat init");
+        this.initFormrun();
+        return; // 2回目からはここで終わり
+      } // 初回のみ SDKを ロードする
       new Promise((resolve, reject) => {
         // (1). 該当スクリプトを動的にロード
         const script = document.createElement("script");
