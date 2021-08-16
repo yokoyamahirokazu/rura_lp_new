@@ -283,7 +283,9 @@
 export default {
   mounted() {
     this.$adobeFonts(document);
-    this.loadFormrunScript();
+    if (process.client) {
+      this.loadFormrunScript();
+    }
   },
   layout: "lower",
 
