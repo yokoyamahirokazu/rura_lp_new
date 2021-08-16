@@ -92,14 +92,18 @@
             </div>
 
             <div class="contact_form_box">
-              <span class="form_title"
-                >お名前<span class="form_title_small required">必須</span></span
-              >
-              <input name="お名前" type="text" data-formrun-required />
+              <label for="お名前">
+                <span class="form_title"
+                  >お名前<span class="form_title_small required"
+                    >必須</span
+                  ></span
+                >
+                <input name="お名前" type="text" data-formrun-required />
 
-              <span class="text_danger" data-formrun-show-if-error="お名前"
-                >お名前を正しく入力してください</span
-              >
+                <span class="text_danger" data-formrun-show-if-error="お名前"
+                  >お名前を正しく入力してください</span
+                >
+              </label>
             </div>
 
             <div class="contact_form_box">
