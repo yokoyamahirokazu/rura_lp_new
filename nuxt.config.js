@@ -130,7 +130,26 @@ export default {
 
 
 
+  router: {
+    routes: [
+      {
+        name: 'index',
+        path: '/',
+        component: 'pages/index.vue'
+      },
+      {
+        name: 'contact',
+        path: '/contact',
+        component: 'pages/contact/index.vue'
+      },
+      {
+        name: 'thanks',
+        path: '/contact/thanks',
+        component: 'pages/contact/thanks.vue'
+      },
 
+    ]
+  },
 
   generate: {
     async routes() {

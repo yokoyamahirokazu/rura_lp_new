@@ -283,6 +283,7 @@
 export default {
   mounted() {
     this.$adobeFonts(document);
+    this.loadFormrunScript();
   },
   layout: "lower",
 
@@ -299,11 +300,11 @@ export default {
     };
   },
 
-  mounted() {
-    if (process.client) {
-      this.loadFormrunScript();
-    }
-  },
+  // mounted() {
+  //   if (process.client) {
+  //     this.loadFormrunScript();
+  //   }
+  // },
   methods: {
     initFormrun() {
       window.Formrun._reset(); // (2)の処理
