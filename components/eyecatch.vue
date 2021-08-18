@@ -24,7 +24,7 @@
                 <nuxt-link
                   to="/contact"
                   class="button yellow"
-                  @click="truckCc2()"
+                  @click.native="truckCc2()"
                 >
                   <img src="~/assets/icon/icon_contact.svg" />お問い合わせ
                 </nuxt-link>

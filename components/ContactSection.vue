@@ -19,7 +19,7 @@
                 v-scroll-inview:fadeIn
                 to="/contact"
                 class="button yellow"
-                @click="truckCc3()"
+                @click.native="truckCc3()"
               >
                 <img src="~/assets/icon/icon_contact.svg" />お問い合わせ
               </nuxt-link>
