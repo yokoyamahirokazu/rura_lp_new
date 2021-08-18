@@ -15,12 +15,7 @@
       </div>
       <ul>
         <li>
-          <nuxt-link
-            @click.native="navOpen = !navOpen"
-            to="#case"
-            @click="truckCase"
-            >導入事例</nuxt-link
-          >
+          <nuxt-link @click="truckTest">導入事例</nuxt-link>
         </li>
         <li>
           <nuxt-link
@@ -93,6 +88,13 @@
 <script>
 export default {
   methods: {
+    truckTest() {
+      this.$gtag("event", "クリック計測", {
+        event_category: "SNSボタンクリック",
+        event_label: "twitter",
+        value: 1,
+      });
+    },
     truckCase() {
       this.$gtag("event", "click", {
         event_category: "anchor",
