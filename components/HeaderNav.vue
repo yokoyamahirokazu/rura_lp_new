@@ -15,53 +15,72 @@
       </div>
       <ul>
         <li>
-          <nuxt-link @click="truckTest">導入事例</nuxt-link>
+          <nuxt-link
+            @click.native="
+              truckTest();
+              navOpen = !navOpen;
+            "
+            to="#case"
+            >導入事例</nuxt-link
+          >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckService();
+              navOpen = !navOpen;
+            "
             to="#service"
-            @click="truckService()"
             >サービス</nuxt-link
           >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckScene();
+              navOpen = !navOpen;
+            "
             to="#scene"
-            @click="truckScene()"
             >シーン</nuxt-link
           >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckDesign();
+              navOpen = !navOpen;
+            "
             to="#design"
-            @click="truckDesign()"
             >デザイン</nuxt-link
           >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckFunction();
+              navOpen = !navOpen;
+            "
             to="#unique"
-            @click="truckFunction()"
             >機能</nuxt-link
           >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckNews();
+              navOpen = !navOpen;
+            "
             to="#news"
-            @click="truckNews()"
             >お知らせ</nuxt-link
           >
         </li>
         <li>
           <nuxt-link
-            @click.native="navOpen = !navOpen"
+            @click.native="
+              truckFaq();
+              navOpen = !navOpen;
+            "
             to="#faq"
-            @click="truckFaq()"
             >FAQ</nuxt-link
           >
         </li>
@@ -78,7 +97,7 @@
       <nuxt-link
         to="/contact"
         class="button yellow header_contact"
-        @click="truckCc1()"
+        @click.native="truckCc1()"
       >
         <img src="~/assets/icon/icon_contact.svg" /><span>お問い合わせ</span>
       </nuxt-link>
@@ -89,10 +108,9 @@
 export default {
   methods: {
     truckTest() {
-      this.$gtag("event", "クリック計測", {
-        event_category: "SNSボタンクリック",
-        event_label: "twitter",
-        value: 1,
+      this.$gtag("event", "click", {
+        event_category: "anchor",
+        event_label: "click_header_case-study",
       });
     },
     truckCase() {
