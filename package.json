@@ -27,6 +27,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.21.3",
     "@nuxtjs/vuetify": "^1.12.1"
   }
 }
