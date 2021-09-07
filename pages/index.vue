@@ -109,10 +109,12 @@
         <div class="news_box_right">
           <ul class="news">
             <li v-scroll-inview:fadeIn v-for="item in newsItems" :key="item.id">
-              <p class="news_date small">
-                {{ new Date(item.publishedAt).toLocaleDateString() }}
-              </p>
-              <h3 class="news_title">{{ item.title }}</h3>
+              <nuxt-link :to="`/news/${item.id}`">
+                <p class="news_date small">
+                  {{ new Date(item.publishedAt).toLocaleDateString() }}
+                </p>
+                <h3 class="news_title">{{ item.title }}</h3>
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -178,28 +180,28 @@ export default {
     Design,
     Case,
     Unique,
-    Eyecatch,
+    Eyecatch
   },
 
   async asyncData({ $microcms }) {
     const newsData = await $microcms.get({
       endpoint: "news",
-      queries: { limit: 5 },
+      queries: { limit: 5 }
     });
     const caseData = await $microcms.get({
-      endpoint: "case",
+      endpoint: "case"
     });
     const faqData = await $microcms.get({
-      endpoint: "faq",
+      endpoint: "faq"
     });
     const recommendData = await $microcms.get({
-      endpoint: "recommend",
+      endpoint: "recommend"
     });
     return {
       newsItems: newsData.contents,
       caseItems: caseData.contents,
       faqItems: faqData.contents,
-      recommendItems: recommendData.contents,
+      recommendItems: recommendData.contents
     };
   },
 
@@ -214,15 +216,15 @@ export default {
         responsive: [
           {
             breakpoint: 1280,
-            settings: {},
+            settings: {}
           },
           {
             breakpoint: 640,
             settings: {
-              arrows: false,
-            },
-          },
-        ],
+              arrows: false
+            }
+          }
+        ]
       },
       recommendSlider: {
         arows: false,
@@ -236,14 +238,13 @@ export default {
           {
             breakpoint: 640,
             settings: {
-              arrows: false,
-            },
-          },
-        ],
-      },
+              arrows: false
+            }
+          }
+        ]
+      }
     };
-  },
+  }
 };
 </script>
-<style>
-</style>
+<style></style>

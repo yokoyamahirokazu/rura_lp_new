@@ -90,6 +90,7 @@ export default {
     { src: '~/plugins/slick.js', mode: 'client' },
     { src: '~/plugins/scrollInview' },
     { src: '~/plugins/adobeFont' },
+    { src: '~/plugins/vuelidate'  },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -100,6 +101,7 @@ export default {
     'nuxt-microcms-module',
     '@nuxtjs/axios',
     '@nuxtjs/google-gtag',
+    '@nuxtjs/vuetify',
   ],
   modules: [
   ],
@@ -128,7 +130,9 @@ export default {
   },
 
 
-
+  build: {
+    transpile: ["vee-validate/dist/rules"]
+  },
 
 
   generate: {
@@ -146,5 +150,7 @@ export default {
       return pages
     }
   },
+
+
 
 }

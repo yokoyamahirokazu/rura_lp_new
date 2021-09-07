@@ -23,6 +23,10 @@
     "nuxt-microcms-module": "^1.0.1",
     "slick-carousel": "^1.8.1",
     "vue-slick": "^1.1.16",
+    "vuelidate": "^0.7.6",
     "webpack-node-externals": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.1"
   }
 }
